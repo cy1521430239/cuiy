@@ -1,0 +1,13 @@
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cuiy?characterEncoding=UTF-8&serverTimezone = GMT
+    username: root
+    password: root
+  application:
+    name: cuiy
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 8070
