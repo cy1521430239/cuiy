@@ -1,6 +1,8 @@
 package com.mchr.cuiy.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -32,4 +34,10 @@ public class User implements Serializable {
      */
     @Email
     private String email;
+    /**
+     * 逻辑删除
+     */
+    @TableLogic
+    @TableField(value = "is_deleted")
+    private Boolean deleted;
 }

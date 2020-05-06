@@ -21,6 +21,7 @@ public class LoginController {
     private HttpSession session;
 
     @PostMapping("/login")
+    @CrossOrigin
     public R login(@RequestBody User user){
         User user1=userService.queryUser(user.getUsername(),user.getPassword());
         if (user1==null){
