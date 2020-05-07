@@ -4,8 +4,14 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Data
 @TableName(value = "book")
 public class Book {
@@ -27,6 +33,6 @@ public class Book {
     private int cid;
 
     @TableLogic
-    @TableField(value = "id_deleted")
-    private int deleted;
+    @TableField(value = "is_deleted")
+    private boolean deleted;
 }

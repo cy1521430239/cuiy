@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public enum ResultCodeEnum {
 
-    SUCCESS(true, 20000,"成功"),
+    SUCCESS(true, 200,"成功"),
     UNKNOWN_REASON(false, 20001, "未知错误"),
 
     BAD_SQL_GRAMMAR(false, 21001, "sql语法错误"),

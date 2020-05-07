@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("api")
 @Api("登录功能")
 public class LoginController {
 
@@ -27,6 +27,7 @@ public class LoginController {
         if (user1==null){
         return R.setResult(ResultCodeEnum.LOGIN_ERROR);
         }
+
             session.setAttribute("user",user1);
             return R.setResult(ResultCodeEnum.SUCCESS).message("登录成功").data(user1);
     }

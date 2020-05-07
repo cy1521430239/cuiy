@@ -1,6 +1,7 @@
 package com.mchr.cuiy.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mchr.cuiy.dao.UserDao;
 import com.mchr.cuiy.pojo.User;
 import com.mchr.cuiy.service.UserService;
@@ -8,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserDao,User> implements UserService {
 
     @Autowired
     private UserDao userDao;
