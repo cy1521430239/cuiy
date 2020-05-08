@@ -4,8 +4,10 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -18,6 +20,7 @@ public class User implements Serializable {
      * 用户id
      */
     @TableId
+    @ApiModelProperty(hidden = true)
     private int id;
     /**
      * 用户名
@@ -27,7 +30,7 @@ public class User implements Serializable {
     /**
      * 用户密码
      */
-    @Length(min = 6,max = 20,message = "请输入6-20位的密码")
+    @Length(min = 6,max = 50,message = "输入密码不合法")
     private String password;
     /**
      * 用户邮箱
@@ -39,5 +42,26 @@ public class User implements Serializable {
      */
     @TableLogic
     @TableField(value = "is_deleted")
+    @ApiModelProperty(hidden = true)
     private Boolean deleted;
+    /**
+     * 密码加盐
+     */
+    @ApiModelProperty(hidden = true)
+    private String salt;
+
+    /**
+     * 角色
+     */
+
+    private String name;
+    /**
+     * 电话号码
+     *
+     */
+    private String phone;
+    /**
+     * User status
+     */
+    private boolean enabled;
 }
